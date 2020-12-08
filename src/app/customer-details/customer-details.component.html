@@ -1,0 +1,48 @@
+<div class="container text-center" id="customerDetailsCard">
+    <div id="detailsBox">
+        <form [formGroup]="CustomerForm">
+            <div>
+
+                <h3 style="color: #e22727; font-weight: 600;">Submit your Details</h3>
+                <p>
+                    Please enter your details below
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="uname" style="font-weight: 600; text-align: right;">Name</label>
+                <input type="name" formControlName="names" [(ngModel)]="customerData.names" [ngClass]="{ 'is-invalid': submitted && f.names.errors }" class="form-control textboxid" required>
+                <div *ngIf="submitted && f.names.errors" class="invalid-feedback">
+                    <div *ngIf="f.names.errors.required">Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="psw" style="font-weight:600;">Mobile Number</label>
+                <input formControlName="number" (keypress)="numberOnly($event)" maxlength="10" [(ngModel)]="customerData.number" [ngClass]="{ 'is-invalid': submitted && f.number.errors }" class="form-control textboxid" required>
+                <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+                    <div *ngIf="f.number.errors.required">Phone Number is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="psw" style="font-weight: 600;">Address</label>
+                <textarea rows="2" cols="50" formControlName="address" class="form-control" [(ngModel)]="customerData.address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" required></textarea>
+                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                    <div *ngIf="f.address.errors.required">Address is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="psw" style="font-weight: 600;">Comments</label>
+                <textarea rows="5" cols="50" formControlName="comments" class="form-control" [(ngModel)]="customerData.comments" [ngClass]="{ 'is-invalid': submitted && f.comments.errors }" required></textarea>
+                <div *ngIf="submitted && f.comments.errors" class="invalid-feedback">
+                    <div *ngIf="f.comments.errors.required">Comments is required</div>
+                </div>
+            </div>
+            <div class="mb-3"></div>
+            <div class="form-group">
+                <!-- <button style="background-color: #27ADE2;">Submit</button> -->
+                <div class="share-button" (click)="submit()">
+                    <button>SUBMIT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
