@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CustomerDetailsComponent implements OnInit {
 
-  private SubmitUrl = 'http://localhost/parra.php';
+  private SubmitUrl = 'https://aswathsudhar.github.io/ladiesworld/parra.php';
   customerData = { names: '', number: '', address: '', comments: '' };
   CustomerForm: FormGroup;
   submitted = false;
