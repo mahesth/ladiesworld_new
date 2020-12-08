@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class CustomerDetailsComponent implements OnInit {
-
-  private SubmitUrl = 'https://aswathsudhar.github.io/ladiesworld/parra.php';
+  
+  private SubmitUrl = `https://aswathsudhar.github.io/ladiesworld/parra.php`;
   customerData = { names: '', number: '', address: '', comments: '' };
   CustomerForm: FormGroup;
   submitted = false;
